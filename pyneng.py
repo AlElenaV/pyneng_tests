@@ -8,9 +8,9 @@ import sys
 from collections import defaultdict
 from glob import glob
 
-import click
+#import click
 import pytest
-from pytest_jsonreport.plugin import JSONReport
+#from pytest_jsonreport.plugin import JSONReport
 
 task_dirs = [
     "04_data_structures",

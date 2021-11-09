@@ -81,3 +81,18 @@ trunk = {
 #             print(f" {command} {vlan}")
 #         else:
 #             print(f" {command}")
+"""
+* ['add', '10', '20'] - команда switchport trunk allowed vlan add 10,20
+* ['del', '17'] - команда switchport trunk allowed vlan remove 17
+* ['only', '11', '30'] - команда switchport trunk allowed vlan 11,30
+"""
+arg_to_action_mappings = {'add': 'add', 'del': 'remove', 'only': ''}
+for intf, args in trunk.items():
+    print("interface FastEthernet" + intf)
+    for command in trunk_template:
+        if command.endswith("switchport trunk allowed vlan"):
+            action = arg_to_action_mappings[args[0]]
+            vlans = ','.join(args[1:])
+            print(f" {command} {action} {vlans}")
+        else:
+            print(f" {command}")

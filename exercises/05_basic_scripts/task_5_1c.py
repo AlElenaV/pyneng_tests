@@ -49,3 +49,10 @@ london_co = {
         "routing": True,
     },
 }
+device_dict_keys = list(london_co.keys())
+d_name = input(f"Input device name {device_dict_keys}\t")
+param_dict_keys = list(london_co[d_name].keys())
+p_name = input(f"Input parameter name {param_dict_keys}:\t")
+print("-"*50)
+print(london_co[d_name].get(p_name, "OOOPS, there is no such parameter"))
+

@@ -44,3 +44,7 @@ london_co = {
         "routing": True,
     },
 }
+d_name = input("Input device name: \n")
+p_name = input("Input parameter name:\n")
+print("-"*50+"\n")
+print(london_co[d_name][p_name])
